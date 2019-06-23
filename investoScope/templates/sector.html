@@ -1,0 +1,214 @@
+<html lang="en">
+
+
+<!-- Mirrored from themes.potenzaglobalsolutions.com/html/mentor-bootstrap-4-admin-dashboard-template/index-stock-market.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Mar 2019 07:56:02 GMT -->
+<head>
+    <title>Investoscope</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Admin template that can be used to build dashboards for CRM, CMS, etc." />
+    <meta name="author" content="Potenza Global Solutions" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- app favicon -->
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <!-- plugin stylesheets -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors.css" />
+    <!-- app style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <script type="text/javascript" src="assets/js/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <!-- begin app -->
+    <div class="app">
+        <!-- begin app-wrap -->
+        <div class="app-wrap">
+            <!-- begin pre-loader -->
+            <div class="loader">
+                <div class="h-100 d-flex justify-content-center">
+                    <div class="align-self-center">
+                        <img src="assets/img/loader/loader.svg" alt="loader">
+                    </div>
+                </div>
+            </div>
+            <!-- end pre-loader -->
+            <!-- begin app-header -->
+            <header class="app-header top-bar">
+                <!-- begin navbar -->
+                <nav class="navbar navbar-expand-md">
+
+                    <!-- begin navbar-header -->
+                    <div class="navbar-header d-flex align-items-center">
+                        <a href="javascript:void:(0)" class="mobile-toggle"><i class="dripicons dripicons-align-left"></i></a>
+                        <a class="navbar-brand" href="index.html">
+                            <img src="assets/img/logo.png" class="img-fluid logo-desktop" alt="logo" />
+                            <img src="assets/img/logo-icon.png" class="img-fluid logo-mobile" alt="logo" />
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="ti ti-align-left"></i>
+                    </button>
+                    <!-- end navbar-header -->
+                    <!-- begin navigation -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="navigation d-flex">
+                            <ul class="navbar-nav nav-left">
+                                <li class="nav-item">
+                                    <a href="javascript:void(0)" class="nav-link sidebar-toggle">
+                                        <i class="dripicons dripicons-align-left"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav nav-right ml-auto">
+                                
+                                
+                                <li class="nav-item dropdown user-profile">
+                                    <a href="javascript:void(0)" class="nav-link dropdown-toggle " id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="assets/img/avtar/02.png" alt="avtar-img">
+                                    </a>
+                                    <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
+                                        <div class="bg-gradient px-4 py-3">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="mr-1">
+                                                    <h4 class="text-white mb-0">Alice Williams</h4>
+                                                    <small class="text-white">Henry@example.com</small>
+                                                </div>
+                                                <a href="#" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout"> <i
+                                                                class="zmdi zmdi-power"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end navigation -->
+                </nav>
+                <!-- end navbar -->
+            </header>
+            <!-- end app-header -->
+            <!-- begin app-container -->
+            <div class="app-container">
+                <!-- begin app-nabar -->
+                <aside class="app-navbar">
+                    <!-- begin sidebar-nav -->
+                    <div class="sidebar-nav scrollbar scroll_light">
+                        <ul class="metismenu " id="sidebarNav">
+                            <li>
+                                <a href="index.html" aria-expanded="false">
+                                    <i class="nav-icon ti ti-rocket"></i>
+                                    <span class="nav-title">Home</span>
+                                </a>
+                            </li>
+                           <li class="active">
+                                <a href="portfolio.html" aria-expanded="false"><i class="nav-icon ti ti-bag"></i> <span class="nav-title">My Portfolio</span></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-info"></i><span class="nav-title">News</span> </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-pie-chart"></i><span class="nav-title">Sector Performance</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end sidebar-nav -->
+                </aside>
+                <!-- end app-navbar -->
+                <!-- begin app-main -->
+                <div class="app-main" id="main">
+                    <!-- begin container-fluid -->
+                    <div class="container-fluid">
+                        <!-- begin row -->
+                        <div class="row">
+                            <div class="col-md-12 m-b-30">
+                                <!-- begin page title -->
+                                <div class="d-block d-sm-flex flex-nowrap align-items-center">
+                                    <div class="page-title mb-2 mb-sm-0">
+                                        <h1>Stock Market</h1>
+                                    </div>
+                                    <div class="ml-auto d-flex align-items-center">
+                                        <nav>
+                                            <ol class="breadcrumb p-0 m-b-0">
+                                                <li class="breadcrumb-item">
+                                                    <a href="index.html"><i class="ti ti-home"></i></a>
+                                                </li>
+                                                <li class="breadcrumb-item">
+                                                    Dashboard
+                                                </li>
+                                                <li class="breadcrumb-item active text-primary" aria-current="page">Stock
+                                                    Market</li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <!-- end page title -->
+                            </div>
+                        </div>
+                        <!-- end row -->
+                        <!-- begin row -->
+                            
+                        
+                        <div class="row" style="height: 1000px;">
+                            <div class="col-xs-12 col-xxl-4 m-b-30">
+                                <div class="card card-statistics mb-0">
+                                    <div class="card-header">
+                                        <h4 class="card-title">1 year sectors performance</h4>
+                                    </div>
+                                    <div class="card-body" style="width: 1120px; padding: 0; overflow: hidden; position:relative;">
+                                                                                                
+                                        <iframe  src="temp-plot.html" style=" width: 100%; height: 700px; margin: 50px; 
+                                                                                                        border: none; position:relative; zoom: 0.75;
+                                                                                                        -moz-transform: scale(0.75);
+                                                                                                        -moz-transform-origin: 0 0;
+                                                                                                        -o-transform: scale(0.75);
+                                                                                                        -o-transform-origin: 0 0;
+                                                                                                        -webkit-transform: scale(0.75);
+                                                                                                        -webkit-transform-origin: 0 0; "></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row" style="height: 1500px;">
+                            <div class="col-xs-12 col-xxl-4 m-b-30">
+                                <div class="card card-statistics h-50 mb-0">
+                                    <div class="card-header">
+                                        <h4 class="card-title">5 years sectors performance</h4>
+                                    </div>
+                                    <div class="card-body" style="width: 1120px; padding: 0; overflow: hidden; position:relative;">
+                                        <iframe  src="temp-plot5.html" style=" width: 100%; height: 1000px; margin: 50px; 
+                                                                                                        border: none; position:relative; zoom: 0.75;
+                                                                                                        -moz-transform: scale(0.75);
+                                                                                                        -moz-transform-origin: 0 0;
+                                                                                                        -o-transform: scale(0.75);
+                                                                                                        -o-transform-origin: 0 0;
+                                                                                                        -webkit-transform: scale(0.75);
+                                                                                                        -webkit-transform-origin: 0 0; "></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end container-fluid -->
+                    </div>
+                    <!-- end app-main -->
+                </div>
+                <!-- end app-container -->
+            </div>
+            <!-- end app-wrap -->
+        </div>
+    </div>
+    <!-- end app -->
+
+    <!-- plugins -->
+    <script src="assets/js/vendors.js"></script>
+
+    <!-- custom app -->
+    <script src="assets/js/app.js"></script>
+</body>
+
+
+
+</html>

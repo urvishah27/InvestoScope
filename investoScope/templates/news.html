@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from themes.potenzaglobalsolutions.com/html/mentor-bootstrap-4-admin-dashboard-template/index-stock-market.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Mar 2019 07:56:02 GMT -->
+<head>
+    <title>Investoscope</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Admin template that can be used to build dashboards for CRM, CMS, etc." />
+    <meta name="author" content="Potenza Global Solutions" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- app favicon -->
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <!-- plugin stylesheets -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors.css" />
+    <!-- app style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+</head>
+
+<body>
+    <!-- begin app -->
+    <div class="app">
+        <!-- begin app-wrap -->
+        <div class="app-wrap">
+            <!-- begin pre-loader -->
+            <div class="loader">
+                <div class="h-100 d-flex justify-content-center">
+                    <div class="align-self-center">
+                        <img src="assets/img/loader/loader.svg" alt="loader">
+                    </div>
+                </div>
+            </div>
+            <!-- end pre-loader -->
+            <!-- begin app-header -->
+            <header class="app-header top-bar">
+                <!-- begin navbar -->
+                <nav class="navbar navbar-expand-md">
+
+                    <!-- begin navbar-header -->
+                    <div class="navbar-header d-flex align-items-center">
+                        <a href="javascript:void:(0)" class="mobile-toggle"><i class="dripicons dripicons-align-left"></i></a>
+                        <a class="navbar-brand" href="/">
+                            <img src="assets/img/logo.png" class="img-fluid logo-desktop" alt="logo" />
+                            <img src="assets/img/logo-icon.png" class="img-fluid logo-mobile" alt="logo" />
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="ti ti-align-left"></i>
+                    </button>
+
+                    <!-- end navbar-header -->
+                    <!-- begin navigation -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="navigation d-flex">
+                            <ul class="navbar-nav nav-left">
+                                <li class="nav-item">
+                                    <a href="javascript:void(0)" class="nav-link sidebar-toggle">
+                                        <i class="dripicons dripicons-align-left"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav nav-right ml-auto">
+                                <li class="nav-item dropdown user-profile">
+                                    <a href="javascript:void(0)" class="nav-link dropdown-toggle " id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="assets/img/avtar/02.png" alt="avtar-img">
+                                    </a>
+                                    <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
+                                        <div class="bg-gradient px-4 py-3">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="mr-1">
+                                                    <h4 class="text-white mb-0">Alice Williams</h4>
+                                                    <small class="text-white">Henry@example.com</small>
+                                                </div>
+                                                <a href="#" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout"> <i
+                                                    class="zmdi zmdi-power"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- end navigation -->
+                    </nav>
+                    <!-- end navbar -->
+                </header>
+                <!-- end app-header -->
+                <!-- begin app-container -->
+                <div class="app-container">
+                    <!-- begin app-nabar -->
+                    <aside class="app-navbar">
+                        <!-- begin sidebar-nav -->
+                        <div class="sidebar-nav scrollbar scroll_light">
+                            <ul class="metismenu " id="sidebarNav">
+                                <li>
+                                    <a href="/" aria-expanded="false">
+                                        <i class="nav-icon ti ti-rocket"></i>
+                                        <span class="nav-title">Home</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/portfolio" aria-expanded="false"><i class="nav-icon ti ti-bag"></i> <span class="nav-title">My Portfolio</span></a>
+                                </li>
+                                <li class="active">
+                                    <a href="/news" aria-expanded="false"><i class="nav-icon ti ti-info"></i><span class="nav-title">News</span> </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-pie-chart"></i><span class="nav-title">Sector Performance</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- end sidebar-nav -->
+                    </aside>
+                    <!-- end app-navbar -->
+                    <!-- begin app-main -->
+                    <div class="app-main" id="main">
+                        <!-- begin container-fluid -->
+                        <div class="container-fluid">
+                            <!-- begin row -->
+                            <div class="row">
+                                <div class="col-md-12 m-b-30">
+                                    <!-- begin page title -->
+                                    <div class="d-block d-sm-flex flex-nowrap align-items-center">
+                                        <div class="page-title mb-2 mb-sm-0">
+                                            <h1>News</h1>
+                                        </div>
+                                        <div class="ml-auto d-flex align-items-center">
+                                            <nav>
+                                                <ol class="breadcrumb p-0 m-b-0">
+                                                    <li class="breadcrumb-item">
+                                                        <a href="/"><i class="ti ti-home"></i></a>
+                                                    </li>
+                                                    <li class="breadcrumb-item active text-primary" aria-current="page">News</li>
+                                                </ol>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                    <!-- end page title -->
+                                </div>
+                            </div>
+                            <!-- end row -->
+                            <!-- begin row -->
+                            <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card card-statistics">
+                                    <div class="card-body">
+                                        <div class="owl-wrapper">
+                                            <div class="owl-carousel owl-theme" data-nav-dots="false" data-items="10" data-xl-items="10" data-lg-items="10" data-md-items="6" data-sm-items="4" data-xs-items="4" data-xx-items="2">
+                                                <div class="item">
+                                                    <div class="p-2 text-center">
+                                                        <i class="fa fa-cny text-danger font-26"></i>
+                                                        <small class="text-uppercase d-block mt-1">China</small>
+                                                        <strong id="CNY">0.09447 </strong>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="p-2 text-center">
+                                                        <i class="fa fa-money text-info font-26"></i>
+                                                        <small class="text-uppercase d-block mt-1">Swiss Franc</small>
+                                                        <strong id="CHF">0.01407 </strong>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="p-2 text-center">
+                                                        <i class="fa fa-dollar text-warning font-26"></i>
+                                                        <small class="text-uppercase d-block mt-1">U.S Dollar</small>
+                                                        <strong id="USD">0.01408 </strong>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="p-2 text-center">
+                                                        <i class="fa fa-money text-primary font-26"></i>
+                                                        <small class="text-uppercase d-block mt-1">Brazilian Real </small>
+                                                        <strong id="BZR">0.05320 </strong>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="p-2 text-center">
+                                                        <i class="fa fa-eur text-info font-26"></i>
+                                                        <small class="text-uppercase d-block mt-1">Euro</small>
+                                                        <strong id="EUR">0.01238 </strong>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="p-2 text-center">
+                                                        <i class="fa fa-dollar text-cyan font-26"></i>
+                                                        <small class="text-uppercase d-block mt-1">Hong Kong Dollar </small>
+                                                        <strong id="HKD">0.11056 </strong>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="p-2 text-center">
+                                                        <i class="fa fa-gbp text-success font-26"></i>
+                                                        <small class="text-uppercase d-block mt-1">Pound </small>
+                                                        <strong id="GBP">0.01066 </strong>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="p-2 text-center">
+                                                        <i class="fa fa-dollar text-orange font-26"></i>
+                                                        <small class="text-uppercase d-block mt-1">Australian Dollar</small>
+                                                        <strong id="AUD">0.01989 </strong>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="p-2 text-center">
+                                                        <i class="fa fa-jpy text-primary2 font-26"></i>
+                                                        <small class="text-uppercase d-block mt-1">Japanese</small>
+                                                        <strong id="JPY"> 1.57439</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="p-2 text-center">
+                                                        <i class="fa fa-dollar text-cyan font-26"></i>
+                                                        <small class="text-uppercase d-block mt-1">Canadian Dollar</small>
+                                                        <strong id="CAD">0.01873 </strong>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="p-2 text-center">
+                                                        <i class="fa fa-money text-warning font-26"></i>
+                                                        <small class="text-uppercase d-block mt-1">Swedish Krona</small>
+                                                        <strong id="SEK">0.13058 </strong>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="item">
+                                                    <div class="p-2 text-center">
+                                                        <i class="fa fa-dollar text-dark font-26"></i>
+                                                        <small class="text-uppercase d-block mt-1">New Zealand Dollar</small>
+                                                        <strong id="NZD">0.02072 </strong>
+                                                    </div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="p-2 text-center">
+                                                        <i class="fa fa-money text-danger font-26"></i>
+                                                        <small class="text-uppercase d-block mt-1">South African Rand</small>
+                                                        <strong id="ZAR">0.20044 </strong>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            <div class="row media-contant">
+                                <div class="col-12 col-lg-12">
+                                    <div class="card card-statistics media-contant">
+                                        <div class="card-body row">
+                                            <div class="media col-sm-2">
+                                                <img class="mr-3 mb-3 mb-xxs-0 img-fluid" src="https://www.usnews.com/dims4/USNEWS/b44cb71/2147483647/thumbnail/970x647/quality/85/?url=http%3A%2F%2Fcom-usnews-beam-media.s3.amazonaws.com%2F66%2Fb8%2Fb7a41cc1437b982988170f5ea534%2F171227-southwestairlines-editorial.jpg" alt="image">
+                                            </div>
+                                            <div class="media-body col-sm-10">
+                                                <h4><a class="mt-0" href="https://money.usnews.com/money/blogs/the-smarter-mutual-fund-investor/articles/5-industrial-stocks-set-to-surge">5 Industrial Stocks Set to Surge</a></h4>
+                                                5 Industrial Stocks Set to Surge By Peter Ashton , Contributor Feb. 27, 2019 By Peter Ashton ,at 10:30 a.m. Southwest Airlines Co. posted a strong fourth-quarter performance.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row media-contant">
+                                <div class="col-12 col-lg-12">
+                                    <div class="card card-statistics media-contant">
+                                        <div class="card-body row">
+                                            <div class="media col-sm-2">
+                                                <img class="mr-3 mb-3 mb-xxs-0 img-fluid" src="http://mynorthwest.com/wp-content/uploads/2019/02/ap_adb30621492940b69bddeb6f3a3d3bf8.jpg" alt="image">
+                                            </div>
+                                            <div class="media-body col-sm-10">
+                                                <h4><a class="mt-0" href="http://omgili.com/ri/2wGaacqxApv8nrKW1iMsRTUQ5oML45er.GZHOMB.h2HrctOVO0Dm99c00vh33dpBClfInVrcVxqaxt2mTNuB39gsKFSdyNBnJOicUdSS.TqDH.rWX7YN3P3s_Bx9umSR">International tensions push US stocks lower in early trading</a></h4>
+                                                In this Feb. 15, 2019, file photo traders Patrick Casey, left, and Sal Suarino work on the floor of the New York Stock Exchange. The U.S. stock market opens at 9:30 a.m.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row media-contant">
+                                <div class="col-12 col-lg-12">
+                                    <div class="card card-statistics media-contant">
+                                        <div class="card-body row">
+                                            <div class="media col-sm-2">
+                                                <img class="mr-3 mb-3 mb-xxs-0 img-fluid" src="http://mynorthwest.com/wp-content/uploads/2019/02/ap_adb30621492940b69bddeb6f3a3d3bf8.jpg" alt="image">
+                                            </div>
+                                            <div class="media-body col-sm-10">                                                        
+                                                <h4><a class="mt-0" href="http://omgili.com/ri/2wGaacqxApv8nrKW1iMsRTUQ5oML45er565Iax1rAYOLU0vgd5LbY8hskzrhI113b27hTmiTKPV6tJrW7iULZWyq422zCJny_uS7PXj8BSPrpHoYMGuC0Q--">Markets Right Now: Stocks open lower on Wall Street</a></h4>
+                                              In this Feb. 15, 2019, file photo traders Patrick Casey, left, and Sal Suarino work on the floor of the New York Stock Exchange.
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="row media-contant">
+                                <div class="col-12 col-lg-12">
+                                    <div class="card card-statistics media-contant">
+                                        <div class="card-body row">
+                                            <div class="media col-sm-2">
+                                                <img class="mr-3 mb-3 mb-xxs-0 img-fluid" src="https://kreviewer.com/wp-content/uploads/logos/Logos/BSX.png" alt="image">
+                                            </div>
+                                            <div class="media-body col-sm-10">                            
+                                                <h4><a class="mt-0" href="http://omgili.com/ri/.wHSUbtEfZQvoL61Z.i6wNGIPzjx0nGRuX34_InDuwe0RKbMaf85o2Yt_OfESCzoLKN2sXSSj04WI1HtIs3ieUtSB9gdxDh3NEUnJUnwzt2t2wAxDzrpA4wrSw.tAdayuFY0RS8pBtc-">Boston Scientific Corporation (NYSE:BSX) Weekly Ratings on Feb 27, 2019 | K Reviewer</a></h4>
+                                                Boston Scientific Corporation (NYSE:BSX) Corporate Logo
+                                                During Q3 2018 the big money sentiment increased to 1.22. That’s change of 0.02, from 2018Q2’s 1.2. 37 investors sold all, 189 reduced holdings as Boston Scientific Corporation ratio increased. 174 rose holdings while 101 funds took holdings.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row media-contant">
+                                <div class="col-12 col-lg-12">
+                                    <div class="card card-statistics media-contant">
+                                        <div class="card-body row">
+                                            <div class="media col-sm-2">
+                                                <img class="mr-3 mb-3 mb-xxs-0 img-fluid" src="https://cdn1.benzinga.com/files/imagecache/bz2_opengraph_meta_image_400x300/images/story/2012/measure-1509707_1920.jpg" alt="image">
+                                            </div>
+                                            <div class="media-body col-sm-10">                                                
+                                                <h4><a class="mt-0" href="http://omgili.com/ri/.wHSUbtEfZQvcIM99duwIPlFbCRbswfuDoSvsdcMkA43eOPG3fbEzmxAz6fy5Hul6_cyd3yvbb5OwjvhzJK.lI5iauyCwQg_Q2oX7Qt9.NmxQ7in_nppPaOON4Q6ZJ96oEeeHAiXhD4uTJfuRxP6fg--">6 Indexes That Can Help You Track The OTC Markets</a></h4>
+                                                Indexes are a go-to for all of us in our day-to-day market watching. Whether you’re partial to the 30-member Dow Jones Industrial Average, the tech-centric Nasdaq 100, or the S&P 500, they’re all invaluable tools for comparing the performance.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row media-contant">
+                              <div class="col-12 col-lg-12">
+                                  <div class="card card-statistics media-contant">
+                                      <div class="card-body row">
+                                          <div class="media col-sm-2">
+                                              <img class="mr-3 mb-3 mb-xxs-0 img-fluid" src="https://imagesvc.timeincapp.com/v3/fan/image?url=https://wizofawes.com/wp-content/uploads/getty-images/2017/07/648268066.jpeg&" alt="image">
+                                          </div>
+                                          <div class="media-body col-sm-10">                                                  <h4><a class="mt-0" href="http://omgili.com/ri/.wHSUbtEfZQ2PDCzdiZndzPg8ulgU.EQXO8n6W.CzzXQEwyAaHJBnydsTeGwV3te6mkGVMCBPcxFyAdnu8uLZ4uWJtlDI462TI8BUg7ov99TEjlBF149WCzfd63y.6QMOeqGz6i.ibM-">Washington Wizards: How the 2017 trade with the Brooklyn Nets shaped the Wizards’ present and future</a></h4>
+                                              Comment In the midst of the playoff chase in February 2017, pulled the trigger on a deal with the Brooklyn Nets that sent both teams in different directions.
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row media-contant">
+                            <div class="col-12 col-lg-12">
+                                <div class="card card-statistics media-contant">
+                                    <div class="card-body row">
+                                        <div class="media col-sm-2">
+                                            <img class="mr-3 mb-3 mb-xxs-0 img-fluid" src="https://www.gannett-cdn.com/presto/2018/08/30/PDTF/ef08c481-51d6-4ef1-9ac5-3fdf7b9a41e2-blue_chips.jpg?crop=3023,1700,x0,y236&width=3200&height=1680&fit=bounds" alt="image">
+                                        </div>
+                                        <div class="media-body col-sm-10">
+                                            <h4><a class="mt-0" href="http://omgili.com/ri/.wHSUbtEfZRj2zBbblOpDMyw6x8xfg10KDJGU2V1ZS3_SyCoT4b5ESW88Tqz25_5CzAbRJ.zDH2QYZQMJMA48hwJU2S5t_tRLgVmijMwKm7.Jx6R6pgMGA4gnjP2CBNDbKZr7DQwW.xkI9a3vKP5IQ--">Campbell Soup Company sells Garden Fresh Gourmet in turnaround effort</a></h4>
+                                                Campbell Soup Co. said it will sell its Garden Fresh Gourmet business as part of a turnaround effort. The firm did not disclose the terms of the deal.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row media-contant">
+                              <div class="col-12 col-lg-12">
+                                  <div class="card card-statistics media-contant">
+                                      <div class="card-body row">
+                                          <div class="media col-sm-2">
+                                              <img class="mr-3 mb-3 mb-xxs-0 img-fluid" src="https://mma.prnewswire.com/media/455827/Sinclair_Broadcast_Group_Logo.jpg" alt="image">
+                                          </div>
+                                          <div class="media-body col-sm-10">                                                      <h4><a class="mt-0" href="http://omgili.com/ri/.wHSUbtEfZQvcIM99duwIPlFbCRbswfuJaddLNHX3AJvy2rIZr.gQrBedQ_QqL8j.tzio_mzpBhW7xU8LTJhPJjkBOQ_YBOKMOsPzonEm6yZptXLpLmLs4fIj2HBLmfdFOS6.HfScnxZhgtauR51_Q--">Sinclair Declares $0.20 Per Share Quarterly Cash Dividend</a></h4>
+                                            (NASDAQ: SBGI ) announced that its Board of Directors has declared a quarterly cash dividend of $0.20 per share on the Company's Class A and Class B common stock.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row media-contant">
+                            <div class="col-12 col-lg-12">
+                                <div class="card card-statistics media-contant">
+                                    <div class="card-body row">
+                                        <div class="media col-sm-2">
+                                            <img class="mr-3 mb-3 mb-xxs-0 img-fluid" src="https://resource.globenewswire.com/media/778d5204-3bb4-4cd3-89a1-7f23032b68e3/small/mgp-ingredients-inc-logo.jpg" alt="image">
+                                        </div>
+                                        <div class="media-body col-sm-10">                                                        <h4><a class="mt-0" href="http://omgili.com/ri/.wHSUbtEfZQvcIM99duwIPlFbCRbswfuJaddLNHX3AJvy2rIZr.gQv00Z0Ny1H4CFjfBuHce1ptwwVv5nu5xfoPjRA9IoarxDJip80aOasdFAPJajPs5tP8GlmRTqM7Eyg4UX0QQbEnnq_cNieFpBg9qFert6M2JSHLQOYbB510-">MGP Ingredients Announces Share Repurchase Authorization and Quarterly Cash Dividend Increase</a></h4>
+                                          (NASDAQ: MGPI ), a leading supplier of premium distilled spirits and specialty wheat proteins and starches, today announced that its Board of Directors has approved a $25 million.
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- end container-fluid -->
+              </div>
+              <!-- end app-main -->
+          </div>
+          <!-- end app-container -->
+      </div>
+      <!-- end app-wrap -->
+  </div>
+</div>
+<!-- end app -->
+
+<!-- plugins -->
+<script src="assets/js/vendors.js"></script>
+
+<!-- custom app -->
+<script src="assets/js/app.js"></script>
+</body>
+
+
+<!-- Mirrored from themes.potenzaglobalsolutions.com/html/mentor-bootstrap-4-admin-dashboard-template/index-stock-market.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 01 Mar 2019 07:56:02 GMT -->
+</html>

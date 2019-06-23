@@ -1,0 +1,281 @@
+{% load static %}
+<html>
+<head>
+    <title>Investoscope</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Admin template that can be used to build dashboards for CRM, CMS, etc." />
+    <meta name="author" content="Potenza Global Solutions" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- app favicon -->
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <!-- plugin stylesheets -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors.css" />
+    <!-- app style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <script src="http://widgets.freestockcharts.com/js/jquery-1.3.1.min.js" type="text/javascript"></script> 
+    <!-- plotly -->
+    <script type="text/javascript" src="assets/js/plotly-latest.min.js"></script>
+    
+</head>
+
+<body>
+    <!-- begin app -->
+    <div class="app">
+        <!-- begin app-wrap -->
+        <div class="app-wrap">
+            <!-- begin pre-loader -->
+            <div class="loader">
+                <div class="h-100 d-flex justify-content-center">
+                    <div class="align-self-center">
+                        <img src="assets/img/loader/loader.svg" alt="loader">
+                    </div>
+                </div>
+            </div>
+            <!-- end pre-loader -->
+            <!-- begin app-header -->
+            <header class="app-header top-bar">
+                <!-- begin navbar -->
+                <nav class="navbar navbar-expand-md">
+
+                    <!-- begin navbar-header -->
+                    <div class="navbar-header d-flex align-items-center">
+                        <a href="javascript:void:(0)" class="mobile-toggle"><i class="dripicons dripicons-align-left"></i></a>
+                        <a class="navbar-brand" href="index.html">
+                            <img src="assets/img/logo.png" class="img-fluid logo-desktop" alt="logo" />
+                            <img src="assets/img/logo-icon.png" class="img-fluid logo-mobile" alt="logo" />
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="ti ti-align-left"></i>
+                    </button>
+
+                    <!-- end navbar-header -->
+                    <!-- begin navigation -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="navigation d-flex">
+                            <ul class="navbar-nav nav-left">
+                                <li class="nav-item">
+                                    <a href="javascript:void(0)" class="nav-link sidebar-toggle">
+                                        <i class="dripicons dripicons-align-left"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav nav-right ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link search" href="javascript:void(0)">
+                                        <i class="ti ti-search"></i>
+                                    </a>
+                                    <div class="search-wrapper">
+                                        <div class="close-btn">
+                                            <i class="ti ti-close"></i>
+                                        </div>
+                                        <div class="search-content">
+                                            <form autocomplete="off">
+                                                <div class="form-group autocomplete">
+                                                    <i class="ti ti-search magnifier"></i>
+                                                    <input type="text" class="form-control" id="myInput" placeholder="Search Here" autofocus="autofocus">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </li>
+                                <script type="text/javascript">
+                                    var arr=[];
+                                    var stocks=[];
+                                    var stocks_symbol=[];
+                                    var stocks_name=[];
+                                    var df;
+                                    var inp=document.getElementById("myInput");
+                                    inp.oninput=function(){
+                                        var symbol=inp.value;
+                                        var url1="https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords="+symbol+"&apikey=GE78DQVZHQH6NLJ0";
+                                        console.log("url ",url1);
+                                        if(symbol.length>=3){
+                                            $.ajax(
+                                            {
+                                                type:"GET",
+                                                url: url1,
+                                                success: function( data )
+                                                {
+                                                    df = data["bestMatches"];
+                                                    df.forEach(function(item){
+                                                        stocks_symbol.push(item["1. symbol"]);
+                                                        stocks_name.push(item["2. name"]);
+                                                        stocks.push(item["2. name"]+' ('+item["1. symbol"]+')');
+                                                    }
+                                                    );
+                                                }
+                                            }
+                                            );
+                                            arr=stocks;
+
+                                            var currentFocus;
+                                            inp.addEventListener("input", function(e) {
+                                                var a, b, i, val = this.value;
+                                                closeAllLists();
+                                                if (!val) { return false;}
+                                                currentFocus = -1;
+                                                /*create a DIV element that will contain the items (values):*/
+                                                a = document.createElement("DIV");
+                                                a.setAttribute("id", this.id + "autocomplete-list");
+                                                /*append the DIV element as a child of the autocomplete container:*/
+                                                this.parentNode.appendChild(a);
+                                                /*for each item in the array...*/
+                                                for (i = 0; i < arr.length; i++) {
+                                                  /*check if the item starts with the same letters as the text field value:*/
+                                                  if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                                                    /*create a DIV element for each matching element:*/
+                                                    b = document.createElement("DIV");
+                                                    b.setAttribute("style", "background-color: white;height:40px; cursor:pointer;");
+                                                    b.setAttribute("href","stock/"+stocks_symbol[i]+"/"+stocks_name[i]);
+                                                    /*make the matching letters bold:*/
+                                                    b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                                                    b.innerHTML += arr[i].substr(val.length);
+                                                    /*insert a input field that will hold the current array item's value:*/
+                                                    b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                                                    /*execute a function when someone clicks on the item value (DIV element):*/
+                                                    b.addEventListener("click", function(e) {
+                                                        /*insert the value for the autocomplete text field:*/
+                                                        inp.value = this.getElementsByTagName("input")[0].value;
+                                        /*close the list of autocompleted values,
+                                        (or any other open lists of autocompleted values:*/
+                                        closeAllLists();
+                                    });
+                                                    a.appendChild(b);
+                                                }
+                                            }
+                                        });
+                                            /*execute a function presses a key on the keyboard:*/
+                                            inp.addEventListener("keydown", function(e) {
+                                                var x = document.getElementById(this.id + "autocomplete-list");
+                                                if (x) x = x.getElementsByTagName("div");
+                                                if (e.keyCode == 40) {
+                                  /*If the arrow DOWN key is pressed,
+                                  increase the currentFocus variable:*/
+                                  currentFocus++;
+                                  /*and and make the current item more visible:*/
+                                  addActive(x);
+                                } else if (e.keyCode == 38) { //up
+                                  /*If the arrow UP key is pressed,
+                                  decrease the currentFocus variable:*/
+                                  currentFocus--;
+                                  /*and and make the current item more visible:*/
+                                  addActive(x);
+                              } else if (e.keyCode == 13) {
+                                  /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                                  e.preventDefault();
+                                  if (currentFocus > -1) {
+                                    /*and simulate a click on the "active" item:*/
+                                    if (x) x[currentFocus].click();
+                                }
+                            }
+                        });
+                                            /*execute a function when someone clicks in the document:*/
+                                            document.addEventListener("click", function (e) {
+                                                window.location="stocks/"+
+                                                closeAllLists(e.target);
+                                            });
+
+                                        }
+                                    }
+                                    /*An array containing all the country names in the world:*/
+
+                                    /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+
+                                </script>
+                                <script type="text/javascript">
+                                    function addActive(x) {
+                                      /*a function to classify an item as "active":*/
+                                      if (!x) return false;
+                                      /*start by removing the "active" class on all items:*/
+                                      removeActive(x);
+                                      if (currentFocus >= x.length) currentFocus = 0;
+                                      if (currentFocus < 0) currentFocus = (x.length - 1);
+                                      /*add class "autocomplete-active":*/
+                                      x[currentFocus].classList.add("autocomplete-active");
+                                  }
+
+                                  function removeActive(x) {
+                                      /*a function to remove the "active" class from all autocomplete items:*/
+                                      for (var i = 0; i < x.length; i++) {
+                                        x[i].classList.remove("autocomplete-active");
+                                    }
+                                }
+                                function closeAllLists(elmnt) {
+                                      /*close all autocomplete lists in the document,
+                                      except the one passed as an argument:*/
+                                      var x = document.getElementsByClassName("autocomplete-items");
+                                      for (var i = 0; i < x.length; i++) {
+                                        if (elmnt != x[i] && elmnt != inp) {
+                                          x[i].parentNode.removeChild(x[i]);
+                                      }
+                                  }
+                              }
+
+
+                          </script>
+                          <li class="nav-item" style="margin: 10px; width: 130px">
+                            <a href="auth-login.html" class="btn btn-block btn-round btn-outline-primary">Login / Sign Up</a>
+                        </li>
+                        <li class="nav-item dropdown user-profile">
+                            <a href="javascript:void(0)" class="nav-link dropdown-toggle " id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="assets/img/avtar/02.png" alt="avtar-img">
+                            </a>
+                            <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
+                                <div class="bg-gradient px-4 py-3">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="mr-1">
+                                            <h4 class="text-white mb-0">Alice Williams</h4>
+                                            <small class="text-white">Henry@example.com</small>
+                                        </div>
+                                        <a href="customLogout" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout"> <i
+                                            class="zmdi zmdi-power"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end navigation -->
+            </nav>
+            <!-- end navbar -->
+        </header>
+        <!-- end app-header -->
+        <!-- begin app-container -->
+        <div class="app-container">
+            <!-- begin app-nabar -->
+            <aside class="app-navbar">
+                <!-- begin sidebar-nav -->
+                <div class="sidebar-nav scrollbar scroll_light">
+                    <ul class="metismenu " id="sidebarNav">
+                        <li>
+                            <a href="index.html" aria-expanded="false">
+                                <i class="nav-icon ti ti-rocket"></i>
+                                <span class="nav-title">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="portfolio.html" aria-expanded="false"><i class="nav-icon ti ti-bag"></i> <span class="nav-title">My Portfolio</span></a>
+                        </li>
+                        <li>
+                            <a href="recommended.html" aria-expanded="false"><i class="nav-icon ti ti-list"></i><span class="nav-title">Recommendations</span></a>
+                        </li>
+                        <li>
+                            <a href="news.html" aria-expanded="false"><i class="nav-icon ti ti-info"></i><span class="nav-title">News</span> </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" aria-expanded="false"><i class="nav-icon ti ti-pie-chart"></i><span class="nav-title">Sector Performance</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- end sidebar-nav -->
+            </aside>
+            <!-- end app-navbar -->
+
+{% block_content %}
+{% end_block %}
+
